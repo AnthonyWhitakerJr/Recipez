@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923A15431D4F89D60069BE14 /* CreateRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923A15421D4F89D60069BE14 /* CreateRecipeViewController.swift */; };
 		92F442E41D4EEBB400A6987C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F442E31D4EEBB400A6987C /* AppDelegate.swift */; };
 		92F442E61D4EEBB400A6987C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F442E51D4EEBB400A6987C /* ViewController.swift */; };
 		92F442E91D4EEBB400A6987C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F442E71D4EEBB400A6987C /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923A15421D4F89D60069BE14 /* CreateRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewController.swift; sourceTree = "<group>"; };
 		92F442E01D4EEBB400A6987C /* Recipez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipez.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F442E31D4EEBB400A6987C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F442E51D4EEBB400A6987C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		92F442FA1D4EECA100A6987C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				923A15421D4F89D60069BE14 /* CreateRecipeViewController.swift */,
 				92F442E51D4EEBB400A6987C /* ViewController.swift */,
 			);
 			name = Controller;
@@ -177,6 +180,7 @@
 				92F442E41D4EEBB400A6987C /* AppDelegate.swift in Sources */,
 				92F443001D4EFD9300A6987C /* RecipeCell.swift in Sources */,
 				92F442EC1D4EEBB400A6987C /* Recipez.xcdatamodeld in Sources */,
+				923A15431D4F89D60069BE14 /* CreateRecipeViewController.swift in Sources */,
 				92F442FE1D4EFB2E00A6987C /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +331,7 @@
 				92F442F71D4EEBB400A6987C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

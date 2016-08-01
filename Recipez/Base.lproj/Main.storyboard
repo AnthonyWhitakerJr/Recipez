@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1377" y="490"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Recipe View Controller-->
         <scene sceneID="QtL-zJ-rCX">
             <objects>
-                <viewController id="FU8-Od-wrc" sceneMemberID="viewController">
+                <viewController id="FU8-Od-wrc" customClass="CreateRecipeViewController" customModule="Recipez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hJr-ZD-AxD"/>
                         <viewControllerLayoutGuide type="bottom" id="17h-Kd-WFu"/>
@@ -115,22 +115,28 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I41-BA-kr0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="I41-BA-kr0">
                                 <rect key="frame" x="213" y="254" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="Huw-3x-97G"/>
                                     <constraint firstAttribute="width" constant="175" id="oYE-gw-s15"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnB-bT-Fpu">
+                                <rect key="frame" x="252" y="469" width="97" height="30"/>
+                                <state key="normal" title="Create Recipe"/>
+                                <connections>
+                                    <action selector="createRecipeButtonPressed:" destination="FU8-Od-wrc" eventType="touchUpInside" id="StR-Jn-pjQ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqO-ur-aL6">
                                 <rect key="frame" x="213" y="254" width="175" height="175"/>
                                 <state key="normal" title="Add Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnB-bT-Fpu">
-                                <rect key="frame" x="252" y="469" width="97" height="30"/>
-                                <state key="normal" title="Create Recipe"/>
+                                <connections>
+                                    <action selector="addImageButtonPressed:" destination="FU8-Od-wrc" eventType="touchUpInside" id="2PJ-iM-nxh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +154,13 @@
                             <constraint firstItem="I41-BA-kr0" firstAttribute="top" secondItem="Kns-gA-88v" secondAttribute="bottom" constant="40" id="uuy-ct-ymm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addImageButton" destination="xqO-ur-aL6" id="xzD-bj-4nV"/>
+                        <outlet property="recipeImage" destination="I41-BA-kr0" id="SpT-1g-OFU"/>
+                        <outlet property="recipeIngredients" destination="J9B-aL-wbg" id="fdM-3F-HV8"/>
+                        <outlet property="recipeSteps" destination="jR3-mT-8hL" id="sci-lL-btT"/>
+                        <outlet property="recipeTitle" destination="k0z-lP-zrw" id="tCO-7c-2wj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQc-dM-aeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,4 +186,7 @@
             <point key="canvasLocation" x="657" y="504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="food" width="1200" height="692"/>
+    </resources>
 </document>
