@@ -41,6 +41,7 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func addImageButtonPressed(sender: UIButton) {
+        addImageButton.setTitle("", forState: .Normal)
         presentViewController(imagePicker, animated: true, completion: nil)
     }
 
@@ -64,7 +65,7 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
                 print("Could not save recipe:\(title)")
             }
             
-            dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     
