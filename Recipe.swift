@@ -12,13 +12,22 @@ import UIKit
 
 class Recipe: NSManagedObject {
 
-    func setRecipeImage(image: UIImage) {
-        let data = UIImagePNGRepresentation(image)
+    func setRecipeImage(image: UIImage?) {
+        guard let img = image else {
+            self.image = nil
+            return
+        }
+        
+        let data = UIImagePNGRepresentation(img)
         self.image = data
     }
     
-    func getRecipeImage() -> UIImage {
-        let image = UIImage(data: self.image!)!
-        return image
+    func getRecipeImage() -> UIImage? {
+        if let data = self.image {
+            let image = UIImage(data: data)
+            return image
+        }
+        
+        return nil
     }
 }
