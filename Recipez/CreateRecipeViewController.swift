@@ -21,14 +21,12 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
         recipeImage.layer.cornerRadius = 4.0
         recipeImage.clipsToBounds = true
-        
-        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
@@ -40,11 +38,18 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if (recipeImage.image != nil) {
+            print("clear")
+            addImageButton.setTitle("", forState: .Normal)
+        }
+    }
+    
     @IBAction func addImageButtonPressed(sender: UIButton) {
-        addImageButton.setTitle("", forState: .Normal)
         presentViewController(imagePicker, animated: true, completion: nil)
     }
-
+    
     @IBAction func createRecipeButtonPressed(sender: AnyObject) {
         if let title = recipeTitle.text where !title.isBlank {
             let app = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -70,15 +75,15 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
-
+    
 }

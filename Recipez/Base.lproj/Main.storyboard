@@ -115,7 +115,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="I41-BA-kr0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I41-BA-kr0">
                                 <rect key="frame" x="213" y="254" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="Huw-3x-97G"/>
@@ -131,9 +131,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqO-ur-aL6">
                                 <rect key="frame" x="213" y="254" width="175" height="175"/>
-                                <state key="normal" title="Add Image">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Add Image"/>
                                 <connections>
                                     <action selector="addImageButtonPressed:" destination="FU8-Od-wrc" eventType="touchUpInside" id="2PJ-iM-nxh"/>
                                 </connections>
@@ -186,7 +184,4 @@
             <point key="canvasLocation" x="657" y="504"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="food" width="1200" height="692"/>
-    </resources>
 </document>
