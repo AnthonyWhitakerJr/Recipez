@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func fetchAndSetResults() {
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.managedObjectContext
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Recipe.fetchRequest()
+        let fetchRequest = Recipe.fetchRequest()
 
         do {
             let results = try context.fetch(fetchRequest)
