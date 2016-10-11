@@ -30,7 +30,7 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        imagePicker.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true)
         recipeImage.image = image
     }
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,7 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func addImageButtonPressed(_ sender: UIButton) {
-        present(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true)
     }
     
     @IBAction func createRecipeButtonPressed(_ sender: AnyObject) {
