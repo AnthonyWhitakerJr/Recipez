@@ -29,8 +29,8 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
         recipeImage.clipsToBounds = true
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicker.dismiss(animated: true, completion: nil)
         recipeImage.image = image
     }
     override func didReceiveMemoryWarning() {
@@ -38,31 +38,31 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (recipeImage.image != nil) {
             print("clear")
-            addImageButton.setTitle("", forState: .Normal)
+            addImageButton.setTitle("", for: UIControlState())
         }
     }
     
-    @IBAction func addImageButtonPressed(sender: UIButton) {
-        presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func addImageButtonPressed(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func createRecipeButtonPressed(sender: AnyObject) {
-        if let title = recipeTitle.text where !title.isBlank {
-            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+    @IBAction func createRecipeButtonPressed(_ sender: AnyObject) {
+        if let title = recipeTitle.text , !title.isBlank {
+            let app = UIApplication.shared.delegate as! AppDelegate
             let context = app.managedObjectContext
-            let entity = NSEntityDescription.entityForName("Recipe", inManagedObjectContext: context)!
-            let recipe = Recipe(entity: entity, insertIntoManagedObjectContext: context)
+            let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: context)!
+            let recipe = Recipe(entity: entity, insertInto: context)
             
             recipe.title = title.trim
             recipe.ingredients = recipeIngredients.text?.trim
             recipe.steps = recipeSteps.text?.trim
             recipe.setRecipeImage(recipeImage.image)
             
-            context.insertObject(recipe)
+            context.insert(recipe)
             
             do {
                 try context.save()
@@ -70,7 +70,7 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
                 print("Could not save recipe:\(title)")
             }
             
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

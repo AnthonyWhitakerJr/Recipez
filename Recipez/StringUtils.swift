@@ -10,10 +10,10 @@ import Foundation
 
 extension String {
     var isBlank: Bool {
-        return isEmpty || stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty
+        return isEmpty || trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty
     }
     
     var trim: String {
-        return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 }

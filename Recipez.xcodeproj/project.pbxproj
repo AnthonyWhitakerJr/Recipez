@@ -139,6 +139,7 @@
 					92F442DF1D4EEBB400A6987C = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = VL7RZNELL8;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -302,6 +303,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Whitaker.Anthony.Recipez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -313,6 +315,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Whitaker.Anthony.Recipez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

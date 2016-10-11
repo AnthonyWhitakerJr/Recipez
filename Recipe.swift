@@ -12,7 +12,7 @@ import UIKit
 
 class Recipe: NSManagedObject {
 
-    func setRecipeImage(image: UIImage?) {
+    func setRecipeImage(_ image: UIImage?) {
         guard let img = image else {
             self.image = nil
             return
@@ -23,7 +23,7 @@ class Recipe: NSManagedObject {
     }
     
     func getRecipeImage() -> UIImage? {
-        if let data = self.image {
+        if let data = self.image as Data {
             let image = UIImage(data: data)
             return image
         }
