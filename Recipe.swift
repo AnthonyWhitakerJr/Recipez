@@ -23,8 +23,8 @@ class Recipe: NSManagedObject {
     }
     
     func getRecipeImage() -> UIImage? {
-        if let data = self.image as Data {
-            let image = UIImage(data: data)
+        if let data = self.image {
+            let image = UIImage(data: data as Data)
             return image
         }
         
