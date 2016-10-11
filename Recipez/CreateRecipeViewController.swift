@@ -41,7 +41,6 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (recipeImage.image != nil) {
-            print("clear")
             addImageButton.setTitle("", for: UIControlState())
         }
     }
