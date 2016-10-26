@@ -60,9 +60,7 @@ class CreateRecipeViewController: UIViewController, UIImagePickerControllerDeleg
             recipe.ingredients = recipeIngredients.text?.trim
             recipe.steps = recipeSteps.text?.trim
             recipe.setRecipeImage(recipeImage.image)
-            
-            context.insert(recipe)
-            
+                        
             do {
                 try context.save()
             } catch {
